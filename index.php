@@ -1,34 +1,39 @@
 <?php
 
-class prodotto {
+    class prodotto {
 
-    public $immagine;
-    public $titolo;
-    public $prezzo;
-    public $iconaCategoria;
-    public $tipologiaProdotto;
+        public $immaginePath;
+        public $titolo;
+        public $prezzo;
 
-    function __construct( $_immagine ){
-        $this->immagine = $_immagine;
-        $this->immagine = $_immagine;
-        $this->immagine = $_immagine;
-        $this->immagine = $_immagine;
-        $this->immagine = $_immagine;
+
+        function __construct( $_immagine, $_titolo, $_prezzo ){
+            $this->immaginePath = $_immagine;
+            $this->titolo = $_titolo;
+            $this->prezzo = $_prezzo;
+
+        }
     }
 
-}
+    class categoriaProdotto extends prodotto{
+        public $prodotto;
 
-    $arrayProdotti = [
-        new prodotto('https://www.google.com/search?q=cibo+per+animali&tbm=isch&ved=2ahUKEwiZ1cCIgqr_AhWaHuwKHQoGCGoQ2-cCegQIABAA&oq=cibo+per+animali&gs_lcp=CgNpbWcQA1AAWABgAGgAcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1n&sclient=img&ei=Nbl8ZNnmHJq9sAeKjKDQBg&bih=919&biw=958#imgrc=2ix_Jw7hR2XtjM', "dog's love", '4.25$', 'cibo', 'cibo'),
-        new prodotto(),
-        new prodotto(),
-        new prodotto(),
-        new prodotto(),
-        new prodotto()
-    ];
+        function __construct( $_prodotto ){
+
+            $this->prodotto = $_prodotto;
+            return 'verifica andata a buon fine';
+        }
+
+    
+    }
 
 
-    var_dump($arrayProdotti);
+        $arrayProdotti = [
+            new prodotto('https://www.google.com/search?q=cibo+per+animali&tbm=isch&ved=2ahUKEwiZ1cCIgqr_AhWaHuwKHQoGCGoQ2-cCegQIABAA&oq=cibo+per+animali&gs_lcp=CgNpbWcQA1AAWABgAGgAcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1n&sclient=img&ei=Nbl8ZNnmHJq9sAeKjKDQBg&bih=919&biw=958#imgrc=2ix_Jw7hR2XtjM', 'dogs love', '4.25$')
+        ];
+
+
+        var_dump($arrayProdotti);
 ?>
 
 
